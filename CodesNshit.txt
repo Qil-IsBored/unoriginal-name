@@ -1,0 +1,36 @@
+Launch simulation
+{
+    roslaunch clover_simulation simulator.launch
+}
+
+source it
+{
+    source ~/catkin_ws/devel/setup.bash
+}
+
+lift off
+{
+   rosservice call /navigate "{x: 0, y: 0, z: 1, frame_id: 'body', auto_arm: true}" 
+}
+
+forward
+{
+    rosservice call /navigate "{x: 2, y: 0, z: 1, frame_id: 'body'}"
+}
+
+left
+{
+    rosservice call /navigate "{x: 0, y: 2, z: 1, frame_id: 'body'}"
+}
+
+right
+{
+    rosservice call /navigate "{x: 0, y: -2, z: 1, frame_id: 'body'}"
+}
+
+land
+{
+    rosservice call /land
+}
+
+
