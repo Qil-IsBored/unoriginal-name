@@ -1,0 +1,15 @@
+<launch>
+    <node
+        pkg="lockndrop"
+        type="detector.py"
+        name="cone_detector"
+        output="screen"
+    />
+
+    <node
+        pkg="lockndrop"
+        type="tracker.py"
+        name="tracker_node"
+        output="screen"
+    />
+</launch>

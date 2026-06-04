@@ -1,0 +1,12 @@
+<launch>
+
+    <!-- Empty Gazebo world -->
+    <include file="$(find gazebo_ros)/launch/empty_world.launch"/>
+
+    <!-- Spawn race model -->
+    <node name="spawn_race"
+          pkg="gazebo_ros"
+          type="spawn_model"
+          args="-sdf -file $(find lockndrop)/models/race/model.sdf -model race -x 0 -y 0 -z 0"/>
+
+</launch>

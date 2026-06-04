@@ -1,0 +1,93 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+
+  <model name="orange_cone">
+
+    <!-- IMPORTANT -->
+    <!-- false = movable -->
+    <static>false</static>
+
+    <link name="cone_link">
+
+      <!-- Initial pose -->
+      <pose>0 0 0 0 0 0</pose>
+
+      <!-- Physics -->
+      <inertial>
+        <mass>0.35</mass>
+
+        <inertia>
+          <ixx>0.01</ixx>
+          <iyy>0.01</iyy>
+          <izz>0.01</izz>
+
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyz>0.0</iyz>
+        </inertia>
+      </inertial>
+
+      <!-- VISUAL -->
+      <visual name="visual">
+
+        <geometry>
+          <mesh>
+            <uri>model://orange_cone/meshes/orange_cone.dae</uri>
+
+            <material>
+
+                <!-- base color -->
+                <ambient>1 0.45 0 1</ambient>
+                <diffuse>1 0.45 0 1</diffuse>
+                <specular>0.1 0.1 0.1 1</specular>
+                <emissive>0 0 0 1</emissive>
+
+                <!-- remove ugly reflections -->
+                <!-- <specular>0 0 0 1</specular> -->
+
+                <!-- no glow -->
+                <!-- <emissive>0 0 0 1</emissive> -->
+
+            </material>
+
+            <!-- scale if needed -->
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+
+      </visual>
+
+      <!-- COLLISION -->
+      <collision name="collision">
+
+        <geometry>
+          <mesh>
+            <uri>model://orange_cone/meshes/orange_cone.dae</uri>
+
+            <!-- SAME SCALE -->
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+
+        <!-- collision physics -->
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
+
+          <bounce/>
+
+          <contact>
+            <ode/>
+          </contact>
+        </surface>
+
+      </collision>
+
+    </link>
+
+  </model>
+</sdf>

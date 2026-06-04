@@ -1,0 +1,84 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+
+  <model name="platform">
+
+    <static>true</static>
+
+    <link name="platform_link">
+
+      <!-- VISUAL -->
+      <visual name="visual">
+
+        <geometry>
+          <mesh>
+            <uri>model://platform/meshes/platform.dae</uri>
+
+            <!-- SCALE -->
+            <scale>1 1 1</scale>
+
+          </mesh>
+        </geometry>
+
+         <material>
+
+          <!-- base color -->
+          <ambient>0.2 0.2 0.2 1</ambient>
+          <diffuse>0.25 0.25 0.25 1</diffuse>
+          <specular>0 0 0 1</specular>
+          <emissive>0 0 0 1</emissive>
+
+          <!-- remove ugly reflections -->
+          <!-- <specular>0 0 0 1</specular> -->
+
+          <!-- no glow -->
+          <!-- <emissive>0 0 0 1</emissive> -->
+
+        </material>
+
+      </visual>
+
+      <collision name="collision">
+
+        <!-- slightly lower collision for stability -->
+        <pose>0 0 0.5 0 0 0</pose>
+
+        <geometry>
+          <box>
+            <size>1.5 0.5 1.0</size>
+          </box>
+        </geometry>
+
+        <surface>
+
+          <!-- friction tuning -->
+          <friction>
+            <ode>
+              <mu>0.35</mu>
+              <mu2>0.35</mu2>
+            </ode>
+          </friction>
+
+          <!-- softer contacts -->
+          <contact>
+            <ode>
+              <kp>100000</kp>
+              <kd>1</kd>
+            </ode>
+          </contact>
+
+          <!-- bounce -->
+          <bounce>
+            <restitution_coefficient>0.05</restitution_coefficient>
+            <threshold>0.01</threshold>
+          </bounce>
+
+        </surface>
+
+      </collision>
+
+    </link>
+
+  </model>
+
+</sdf>
