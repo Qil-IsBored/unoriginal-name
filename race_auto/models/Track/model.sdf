@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+
+<model name="track_main">
+  <static>true</static>
+
+  <link name="link">
+
+    <!-- VISUAL -->
+    <visual name="visual">
+      <geometry>
+        <mesh>
+          <uri>model://Track/meshes/TrackMain.dae</uri>
+          <scale>0.1 0.1 0.1</scale>
+        </mesh>
+      </geometry>
+    </visual>
+
+    <!-- COLLISION -->
+    <collision name="collision">
+      <geometry>
+        <mesh>
+          <uri>model://Track/meshes/TrackMain.dae</uri>
+          <scale>0.1 0.1 0.1</scale>
+        </mesh>
+      </geometry>
+    </collision>
+
+  </link>
+</model>
+
+</sdf>

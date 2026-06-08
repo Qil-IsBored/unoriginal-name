@@ -1,0 +1,14 @@
+<launch>
+
+  <arg name="world_file" default="$(find race_auto)/worlds/race.world"/>
+
+  <env name="GAZEBO_RESOURCE_PATH" value="$(find race_auto):$(env GAZEBO_RESOURCE_PATH)"/>
+
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="paused" value="false"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="gui" value="true"/>
+    <arg name="world_name" value="$(arg world_file)"/>
+  </include>
+
+</launch>

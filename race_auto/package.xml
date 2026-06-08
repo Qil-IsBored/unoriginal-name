@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>race_auto</name>
+  <version>0.0.0</version>
+  <description>Race Auto package</description>
+
+  <maintainer email="clover@todo.todo">clover</maintainer>
+  <license>MIT</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>roscpp</depend>
+  <depend>rospy</depend>
+  <depend>std_msgs</depend>
+  <depend>gazebo_ros</depend>
+
+
+</package>
