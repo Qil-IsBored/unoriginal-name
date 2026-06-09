@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+
+<model name="map2">
+  <static>true</static>
+
+  <link name="link">
+
+    <!-- VISUAL -->
+    <visual name="visual">
+      <geometry>
+        <mesh>
+          <uri>model://map2/meshes/map2.dae</uri>
+          <scale>1 1 1</scale>
+        </mesh>
+      </geometry>
+    </visual>
+
+    <!-- COLLISION -->
+    <collision name="collision">
+      <geometry>
+        <mesh>
+          <uri>model://map2/meshes/map2.dae</uri>
+          <scale>1 1 1</scale>
+        </mesh>
+      </geometry>
+    </collision>
+
+  </link>
+</model>
+
+</sdf>
